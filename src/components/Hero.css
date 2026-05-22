@@ -99,58 +99,33 @@
   color: var(--accent);
 }
 
-/* Screenshots Section */
-.hero-screens {
+/* Screenshots Placeholder */
+.hero-screens-placeholder {
   width: 100%;
-  max-width: 1400px;
+  max-width: 900px;
   margin-bottom: 60px;
+  padding: 80px 40px;
+  border: 2px dashed var(--border);
+  border-radius: 24px;
+  background: var(--code-bg);
 }
 
-.screens-container {
+.placeholder-content {
   display: flex;
-  gap: 24px;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text);
 }
 
-.screen-group {
-  flex: 1;
-  min-width: 280px;
-  max-width: 450px;
+.placeholder-content svg {
+  opacity: 0.5;
 }
 
-.screen-image {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
-}
-
-.screen-image:hover {
-  transform: scale(1.02);
-}
-
-.screen-group-left .screen-image,
-.screen-group-right .screen-image {
-  transform: scale(0.95);
-  opacity: 0.9;
-}
-
-.screen-group-left .screen-image:hover,
-.screen-group-right .screen-image:hover {
-  transform: scale(0.97);
-  opacity: 1;
-}
-
-.screen-group-center .screen-image {
-  transform: scale(1);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.screen-group-center .screen-image:hover {
-  transform: scale(1.02);
+.placeholder-content span {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.7;
 }
 
 /* Feature Pills */
@@ -214,12 +189,8 @@
     font-size: 16px;
   }
 
-  .screens-container {
-    gap: 16px;
-  }
-
-  .screen-group {
-    min-width: 250px;
+  .hero-screens-placeholder {
+    padding: 60px 30px;
   }
 }
 
@@ -247,23 +218,8 @@
     width: 100%;
   }
 
-  .screens-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .screen-group {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .screen-group-left,
-  .screen-group-right {
-    display: none;
-  }
-
-  .screen-group-center {
-    max-width: 500px;
+  .hero-screens-placeholder {
+    padding: 50px 20px;
   }
 
   .hero-features {

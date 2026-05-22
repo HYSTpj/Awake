@@ -35,29 +35,14 @@ function Hero() {
         </div>
       </div>
       
-      <div className="hero-screens">
-        <div className="screens-container">
-          <div className="screen-group screen-group-left">
-            <img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-05-22%2013.31.50-HgArRz3pLt0ul4IogD9xGlscAryTQ2.png"
-              alt="Awake app status screens showing event scheduling and check-in features"
-              className="screen-image"
-            />
-          </div>
-          <div className="screen-group screen-group-center">
-            <img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-05-22%2013.32.13-1oZ9AFc0PXJsRmeLtwEDUc9Yp5glCO.png"
-              alt="Awake app create event and participant management screens"
-              className="screen-image"
-            />
-          </div>
-          <div className="screen-group screen-group-right">
-            <img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-05-22%2013.32.01-7LCtV9QDARrUhdmEUAPvHBDCz7TsJU.png"
-              alt="Awake app member status and QR code check-in screens"
-              className="screen-image"
-            />
-          </div>
+      {/* スクリーンショット用のプレースホルダー - 後で画像を追加 */}
+      <div className="hero-screens-placeholder">
+        <div className="placeholder-content">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+            <line x1="12" y1="18" x2="12.01" y2="18" />
+          </svg>
+          <span>App Screenshots Coming Soon</span>
         </div>
       </div>
       
