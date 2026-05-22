@@ -1,0 +1,243 @@
+.hero {
+  padding: 80px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* App Name - Large and Prominent */
+.hero-app-name {
+  font-size: 96px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0 0 24px;
+  color: var(--text-h);
+  line-height: 1;
+}
+
+/* Tagline */
+.hero-tagline {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  margin: 0 0 24px;
+  color: var(--text-h);
+}
+
+.tagline-accent {
+  color: var(--accent);
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Screenshots Placeholder - removed */
+
+/* Section Titles */
+.hero-section {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-h);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-title-app {
+  color: var(--accent);
+}
+
+.section-title-muted {
+  color: var(--text);
+  font-size: 20px;
+}
+
+/* Feature Cards - App Style with offset shadow */
+.hero-features {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--accent);
+  border: 3px solid #000000;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  position: relative;
+  box-shadow: 4px 4px 0 0 #000000;
+  transition: all 0.15s ease;
+  cursor: default;
+}
+
+.feature-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 #000000;
+}
+
+.feature-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 #000000;
+}
+
+.feature-card-highlight {
+  background: var(--accent);
+}
+
+.feature-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  color: #000000;
+}
+
+/* Disabled feature cards */
+.feature-card-disabled {
+  background: white;
+  border: 3px solid var(--border);
+  box-shadow: 4px 4px 0 0 var(--border);
+  color: var(--text);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.feature-card-disabled:hover {
+  transform: none;
+  box-shadow: 4px 4px 0 0 var(--border);
+}
+
+.feature-card-disabled:active {
+  transform: none;
+  box-shadow: 4px 4px 0 0 var(--border);
+}
+
+.feature-card-icon-disabled {
+  background: var(--code-bg);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 60px 20px 40px;
+  }
+
+  .hero-app-name {
+    font-size: 72px;
+    letter-spacing: -2px;
+  }
+
+  .hero-tagline {
+    font-size: 26px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-screens-placeholder {
+    padding: 60px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    margin-bottom: 40px;
+  }
+
+  .hero-app-name {
+    font-size: 56px;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-tagline {
+    font-size: 22px;
+  }
+
+  .hero-screens-placeholder {
+    padding: 50px 20px;
+    box-shadow: 4px 4px 0 0 var(--text-h);
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-title-muted {
+    font-size: 18px;
+  }
+
+  .hero-features {
+    gap: 12px;
+  }
+
+  .feature-card {
+    padding: 12px 18px;
+    font-size: 14px;
+    box-shadow: 3px 3px 0 0 #000000;
+  }
+
+  .feature-card:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 0 #000000;
+  }
+
+  .feature-card-disabled {
+    box-shadow: 3px 3px 0 0 var(--border);
+  }
+
+  .feature-card-disabled:hover {
+    box-shadow: 3px 3px 0 0 var(--border);
+  }
+
+  .feature-card-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .feature-card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-app-name {
+    font-size: 48px;
+  }
+
+  .hero-tagline {
+    font-size: 18px;
+  }
+}
