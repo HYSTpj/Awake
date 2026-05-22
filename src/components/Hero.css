@@ -32,9 +32,9 @@
 }
 
 .hero-title {
-  font-size: 52px;
+  font-size: 48px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.3;
   letter-spacing: -1.5px;
   margin: 0 0 24px;
   color: var(--text-h);
@@ -49,6 +49,10 @@
   line-height: 1.7;
   color: var(--text);
   margin-bottom: 32px;
+}
+
+.hero-description strong {
+  color: var(--text-h);
 }
 
 .mobile-break {
@@ -128,13 +132,32 @@
   opacity: 0.7;
 }
 
+/* Section Titles */
+.hero-section {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-h);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-title-muted {
+  color: var(--text);
+  font-size: 20px;
+}
+
 /* Feature Pills */
 .hero-features {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 800px;
 }
 
 .feature-item {
@@ -151,16 +174,19 @@
   transition: all 0.2s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  .feature-item {
-    background: var(--code-bg);
-  }
-}
-
 .feature-item:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(232, 106, 51, 0.15);
+}
+
+.feature-item-highlight {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+}
+
+.feature-item-highlight:hover {
+  background: var(--accent-bg);
 }
 
 .feature-icon {
@@ -174,6 +200,29 @@
   color: var(--accent);
 }
 
+/* Disabled features */
+.hero-features-disabled {
+  opacity: 0.7;
+}
+
+.feature-item-disabled {
+  background: var(--code-bg);
+  border-color: var(--border);
+  text-decoration: line-through;
+  color: var(--text);
+}
+
+.feature-item-disabled:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--border);
+}
+
+.feature-icon-disabled {
+  background: var(--code-bg);
+  color: var(--text);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .hero {
@@ -181,7 +230,7 @@
   }
 
   .hero-title {
-    font-size: 38px;
+    font-size: 36px;
     letter-spacing: -1px;
   }
 
@@ -200,7 +249,8 @@
   }
 
   .hero-title {
-    font-size: 32px;
+    font-size: 28px;
+    letter-spacing: -0.5px;
   }
 
   .mobile-break {
@@ -220,6 +270,14 @@
 
   .hero-screens-placeholder {
     padding: 50px 20px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-title-muted {
+    font-size: 18px;
   }
 
   .hero-features {
