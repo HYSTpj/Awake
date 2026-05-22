@@ -13,34 +13,27 @@
   margin-bottom: 60px;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: var(--accent-bg);
-  border: 1px solid var(--accent-border);
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--accent);
-  margin-bottom: 24px;
+/* App Name - Large and Prominent */
+.hero-app-name {
+  font-size: 96px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0 0 24px;
+  color: var(--text-h);
+  line-height: 1;
 }
 
-.badge-icon {
-  font-size: 16px;
-}
-
-.hero-title {
-  font-size: 48px;
+/* Tagline */
+.hero-tagline {
+  font-size: 32px;
   font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -1.5px;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
   margin: 0 0 24px;
   color: var(--text-h);
 }
 
-.title-accent {
+.tagline-accent {
   color: var(--accent);
 }
 
@@ -48,59 +41,7 @@
   font-size: 18px;
   line-height: 1.7;
   color: var(--text);
-  margin-bottom: 32px;
-}
-
-.hero-description strong {
-  color: var(--text-h);
-}
-
-.mobile-break {
-  display: none;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: white;
-  border: 2px solid var(--accent);
-}
-
-.btn-primary:hover {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(232, 106, 51, 0.3);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text-h);
-  border: 2px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  margin: 0;
 }
 
 /* Screenshots Placeholder */
@@ -109,9 +50,11 @@
   max-width: 900px;
   margin-bottom: 60px;
   padding: 80px 40px;
-  border: 2px dashed var(--border);
-  border-radius: 24px;
+  border: 3px solid var(--text-h);
+  border-radius: 16px;
   background: var(--code-bg);
+  position: relative;
+  box-shadow: 6px 6px 0 0 var(--text-h);
 }
 
 .placeholder-content {
@@ -147,12 +90,16 @@
   margin-bottom: 24px;
 }
 
+.section-title-app {
+  color: var(--accent);
+}
+
 .section-title-muted {
   color: var(--text);
   font-size: 20px;
 }
 
-/* Feature Pills */
+/* Feature Cards - App Style with offset shadow */
 .hero-features {
   display: flex;
   gap: 16px;
@@ -160,66 +107,72 @@
   justify-content: center;
 }
 
-.feature-item {
+.feature-card {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 500;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--accent);
+  border: 3px solid var(--text-h);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
   color: var(--text-h);
-  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: 4px 4px 0 0 var(--text-h);
+  transition: all 0.15s ease;
+  cursor: default;
 }
 
-.feature-item:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(232, 106, 51, 0.15);
+.feature-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--text-h);
 }
 
-.feature-item-highlight {
-  background: var(--accent-bg);
-  border-color: var(--accent-border);
+.feature-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 var(--text-h);
 }
 
-.feature-item-highlight:hover {
-  background: var(--accent-bg);
+.feature-card-highlight {
+  background: var(--accent);
 }
 
-.feature-icon {
+.feature-card-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: var(--accent-bg);
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 2px solid var(--text-h);
   border-radius: 10px;
-  color: var(--accent);
+  color: var(--text-h);
 }
 
-/* Disabled features */
-.hero-features-disabled {
+/* Disabled feature cards */
+.feature-card-disabled {
+  background: white;
+  border: 3px solid var(--border);
+  box-shadow: 4px 4px 0 0 var(--border);
+  color: var(--text);
+  text-decoration: line-through;
   opacity: 0.7;
 }
 
-.feature-item-disabled {
-  background: var(--code-bg);
-  border-color: var(--border);
-  text-decoration: line-through;
-  color: var(--text);
-}
-
-.feature-item-disabled:hover {
+.feature-card-disabled:hover {
   transform: none;
-  box-shadow: none;
-  border-color: var(--border);
+  box-shadow: 4px 4px 0 0 var(--border);
 }
 
-.feature-icon-disabled {
+.feature-card-disabled:active {
+  transform: none;
+  box-shadow: 4px 4px 0 0 var(--border);
+}
+
+.feature-card-icon-disabled {
   background: var(--code-bg);
+  border-color: var(--border);
   color: var(--text);
 }
 
@@ -229,9 +182,13 @@
     padding: 60px 20px 40px;
   }
 
-  .hero-title {
-    font-size: 36px;
-    letter-spacing: -1px;
+  .hero-app-name {
+    font-size: 72px;
+    letter-spacing: -2px;
+  }
+
+  .hero-tagline {
+    font-size: 26px;
   }
 
   .hero-description {
@@ -248,28 +205,18 @@
     margin-bottom: 40px;
   }
 
-  .hero-title {
-    font-size: 28px;
-    letter-spacing: -0.5px;
+  .hero-app-name {
+    font-size: 56px;
+    letter-spacing: -1.5px;
   }
 
-  .mobile-break {
-    display: block;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .btn {
-    justify-content: center;
-    width: 100%;
+  .hero-tagline {
+    font-size: 22px;
   }
 
   .hero-screens-placeholder {
     padding: 50px 20px;
+    box-shadow: 4px 4px 0 0 var(--text-h);
   }
 
   .section-title {
@@ -284,18 +231,42 @@
     gap: 12px;
   }
 
-  .feature-item {
-    padding: 10px 16px;
-    font-size: 13px;
+  .feature-card {
+    padding: 12px 18px;
+    font-size: 14px;
+    box-shadow: 3px 3px 0 0 var(--text-h);
   }
 
-  .feature-icon {
+  .feature-card:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 0 var(--text-h);
+  }
+
+  .feature-card-disabled {
+    box-shadow: 3px 3px 0 0 var(--border);
+  }
+
+  .feature-card-disabled:hover {
+    box-shadow: 3px 3px 0 0 var(--border);
+  }
+
+  .feature-card-icon {
     width: 32px;
     height: 32px;
   }
 
-  .feature-icon svg {
+  .feature-card-icon svg {
     width: 18px;
     height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-app-name {
+    font-size: 48px;
+  }
+
+  .hero-tagline {
+    font-size: 18px;
   }
 }
