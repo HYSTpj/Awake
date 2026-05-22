@@ -44,36 +44,7 @@
   margin: 0;
 }
 
-/* Screenshots Placeholder */
-.hero-screens-placeholder {
-  width: 100%;
-  max-width: 900px;
-  margin-bottom: 60px;
-  padding: 80px 40px;
-  border: 3px solid var(--text-h);
-  border-radius: 16px;
-  background: var(--code-bg);
-  position: relative;
-  box-shadow: 6px 6px 0 0 var(--text-h);
-}
-
-.placeholder-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  color: var(--text);
-}
-
-.placeholder-content svg {
-  opacity: 0.5;
-}
-
-.placeholder-content span {
-  font-size: 16px;
-  font-weight: 500;
-  opacity: 0.7;
-}
+/* Screenshots Placeholder - removed */
 
 /* Section Titles */
 .hero-section {
@@ -113,25 +84,25 @@
   gap: 12px;
   padding: 16px 24px;
   background: var(--accent);
-  border: 3px solid var(--text-h);
+  border: 3px solid #000000;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
-  color: var(--text-h);
+  color: #000000;
   position: relative;
-  box-shadow: 4px 4px 0 0 var(--text-h);
+  box-shadow: 4px 4px 0 0 #000000;
   transition: all 0.15s ease;
   cursor: default;
 }
 
 .feature-card:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 0 var(--text-h);
+  box-shadow: 6px 6px 0 0 #000000;
 }
 
 .feature-card:active {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 0 var(--text-h);
+  box-shadow: 2px 2px 0 0 #000000;
 }
 
 .feature-card-highlight {
@@ -145,9 +116,9 @@
   width: 40px;
   height: 40px;
   background: white;
-  border: 2px solid var(--text-h);
+  border: 2px solid #000000;
   border-radius: 10px;
-  color: var(--text-h);
+  color: #000000;
 }
 
 /* Disabled feature cards */
@@ -234,12 +205,12 @@
   .feature-card {
     padding: 12px 18px;
     font-size: 14px;
-    box-shadow: 3px 3px 0 0 var(--text-h);
+    box-shadow: 3px 3px 0 0 #000000;
   }
 
   .feature-card:hover {
     transform: translate(-1px, -1px);
-    box-shadow: 4px 4px 0 0 var(--text-h);
+    box-shadow: 4px 4px 0 0 #000000;
   }
 
   .feature-card-disabled {

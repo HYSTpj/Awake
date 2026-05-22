@@ -17,17 +17,6 @@ function Hero() {
         </p>
       </div>
       
-      {/* スクリーンショット用のプレースホルダー - 後で画像を追加 */}
-      <div className="hero-screens-placeholder">
-        <div className="placeholder-content">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-            <line x1="12" y1="18" x2="12.01" y2="18" />
-          </svg>
-          <span>App Screenshots Coming Soon</span>
-        </div>
-      </div>
-
       {/* AWAKEでできること */}
       <div className="hero-section">
         <h2 className="section-title">
