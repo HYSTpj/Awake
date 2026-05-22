@@ -185,11 +185,6 @@
     font-size: 22px;
   }
 
-  .hero-screens-placeholder {
-    padding: 50px 20px;
-    box-shadow: 4px 4px 0 0 var(--text-h);
-  }
-
   .section-title {
     font-size: 20px;
   }
@@ -198,14 +193,23 @@
     font-size: 18px;
   }
 
+  .hero-section {
+    margin-bottom: 32px;
+  }
+
+  /* 2列グリッド表示でコンパクトに */
   .hero-features {
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   .feature-card {
-    padding: 12px 18px;
-    font-size: 14px;
+    padding: 10px 12px;
+    font-size: 12px;
     box-shadow: 3px 3px 0 0 #000000;
+    gap: 8px;
+    justify-content: flex-start;
   }
 
   .feature-card:hover {
@@ -222,13 +226,14 @@
   }
 
   .feature-card-icon {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
   }
 
   .feature-card-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -239,5 +244,23 @@
 
   .hero-tagline {
     font-size: 18px;
+  }
+
+  .feature-card {
+    padding: 8px 10px;
+    font-size: 11px;
+    border-width: 2px;
+    border-radius: 8px;
+  }
+
+  .feature-card-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+  }
+
+  .feature-card-icon svg {
+    width: 14px;
+    height: 14px;
   }
 }
