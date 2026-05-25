@@ -15,6 +15,9 @@ function Hero() {
           <br />
           起床確認から遅刻レポートまで、すべてを記録。
         </p>
+          <div className="update-notice">
+            ⚠️ 現在ページを更新中です。
+          </div>
       </div>
       
       {/* AWAKEでできること */}
