@@ -1,32 +1,41 @@
-import './Profile.css'
+ import './Profile.css'
+ import RyoImage from '../../assets/ryotaro_profile.jpg'
+//import HaImage from '../../assets/hana_profile.jpg'
+//import MiImage from '../../assets/mitsuki_profile.jpg'
+import AImage from '../../assets/ayane_profile.jpeg'
+import { FaGithub } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 
 const members = [
-
-  {
+     {
     name: 'しでりょう',
-    image: '',
+    image: RyoImage,
     x: 'https://x.com/ry0000taro?s=21',
+    github: 'https://github.com/ry0000taro',
     lateLevel: 5,
     comment: '遅刻の神',
   },
   {
     name: 'はな',
-    image: '',
+    //image: HaImage,
     x: 'https://x.com/haana2187?s=21',
+    github: 'https://github.com/hana2187',
     lateLevel: 3,
     comment: '',
   },
   {
     name: 'みつき',
-    image: '',
+    //image: MiImage,
     x: 'https://x.com/mitsuki_ol2o?s=21',
+    github: 'https://github.com/mitsuki-3928',
     lateLevel: 4,
     comment: '',
   },
   {
     name: 'あやね',
-    image: '',
+    image: AImage,
     x: 'https://x.com/ayane__1118?s=21',
+    github: 'https://github.com/ayane1118',
     lateLevel: 3,
     comment: '',
   },
@@ -36,7 +45,9 @@ function Profile() {
   return (
     <section className="profile-section" id="profile">
       <h2 className="profile-title">
-        <span className="profile-title-accent">Profile</span> 
+        <span className="profile-title-accent">
+          Profile
+        </span>
       </h2>
 
       <div className="profile-grid">
@@ -52,14 +63,26 @@ function Profile() {
               {member.name}
             </h3>
 
-            <a
-              href={member.x}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="profile-x"
-            >
-              𝕏 
-            </a>
+            {/* SNS */}
+            <div className="profile-sns">
+              <a
+                href={member.x}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="profile-x"
+              >
+                <FaXTwitter />
+              </a>
+
+              <a
+                href={member.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="profile-github"
+              >
+                <FaGithub />
+              </a>
+            </div>
 
             <div className="late-section">
               <span className="late-label">
