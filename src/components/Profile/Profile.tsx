@@ -1,7 +1,7 @@
  import './Profile.css'
  import RyoImage from '../../assets/ryotaro_profile.jpg'
-//import HaImage from '../../assets/hana_profile.jpg'
-//import MiImage from '../../assets/mitsuki_profile.jpg'
+import HaImage from '../../assets/hana_profile.jpg'
+import MiImage from '../../assets/mitsuki_profile.jpg'
 import AImage from '../../assets/ayane_profile.jpeg'
 import { FaGithub } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
@@ -17,7 +17,7 @@ const members = [
   },
   {
     name: 'はな',
-    //image: HaImage,
+    image: HaImage,
     x: 'https://x.com/haana2187?s=21',
     github: 'https://github.com/hana2187',
     lateLevel: 3,
@@ -25,7 +25,7 @@ const members = [
   },
   {
     name: 'みつき',
-    //image: MiImage,
+    image: MiImage,
     x: 'https://x.com/mitsuki_ol2o?s=21',
     github: 'https://github.com/mitsuki-3928',
     lateLevel: 4,
