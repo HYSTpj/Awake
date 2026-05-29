@@ -13,7 +13,7 @@ const members = [
     x: 'https://x.com/ry0000taro?s=21',
     github: 'https://github.com/ry0000taro',
     lateLevel: 5,
-    comment: '遅刻の神',
+    comment: '',
   },
   {
     name: 'はな',
