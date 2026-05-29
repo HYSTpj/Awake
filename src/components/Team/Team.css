@@ -1,0 +1,54 @@
+.team-section {
+  padding: 120px 24px 40px;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-small-title {
+  color: #ff6200;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+.team-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 32px;
+}
+
+.team-title span {
+  color: #ff6200;
+}
+
+.team-description {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 64px;
+}
+
+.team-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.team-card {
+  background: #fff;
+
+  border: 6px solid #000;
+
+  padding: 40px;
+
+  box-shadow: 12px 12px 0 #000;
+}
+
+.team-card h3 {
+  color: #ff6200;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}

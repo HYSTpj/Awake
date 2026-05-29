@@ -13,7 +13,7 @@ const members = [
     x: 'https://x.com/ry0000taro?s=21',
     github: 'https://github.com/ry0000taro',
     lateLevel: 5,
-    comment: '',
+    comment: 'トランペット',
   },
   {
     name: 'はな',
@@ -21,7 +21,7 @@ const members = [
     x: 'https://x.com/haana2187?s=21',
     github: 'https://github.com/hana2187',
     lateLevel: 3,
-    comment: '',
+    comment: 'ホルン',
   },
   {
     name: 'みつき',
@@ -29,7 +29,7 @@ const members = [
     x: 'https://x.com/mitsuki_ol2o?s=21',
     github: 'https://github.com/mitsuki-3928',
     lateLevel: 4,
-    comment: '',
+    comment: 'クラリネット',
   },
   {
     name: 'あやね',
@@ -37,7 +37,7 @@ const members = [
     x: 'https://x.com/ayane__1118?s=21',
     github: 'https://github.com/ayane1118',
     lateLevel: 3,
-    comment: '',
+    comment: 'フルート',
   },
 ]
 
