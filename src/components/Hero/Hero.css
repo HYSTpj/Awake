@@ -54,7 +54,7 @@
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 20px; 
   font-weight: 700;
   color: var(--text-h);
   text-align: center;
@@ -67,7 +67,7 @@
 
 .section-title-muted {
   color: var(--text);
-  font-size: 20px;
+  font-size: 16px;
 }
 
 /* Feature Cards - App Style with offset shadow */
