@@ -11,9 +11,9 @@ function Team() {
         </h2>
 
         <p className="team-description">
-          HYSTと書いて、ヒストと読みます。
+          HYST(ヒスト)
           <br />
-            名城大学應援團吹奏楽部に所属する情報系4人で構成されたチームです。
+            名城大学應援團吹奏楽部に所属する情報系4人によって構成されたチームです。
         </p>
       </div>
     </section>
