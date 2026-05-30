@@ -154,7 +154,8 @@
 }
 
 /* Mobile - レスポンシブ対応 */
-@media (max-width: 768spx) {
+/* Mobile - レスポンシブ対応 */
+@media (max-width: 768px) {  /* ← 768spx → 768px */
   .features-section {
     padding: 80px 20px;
   }
@@ -163,26 +164,11 @@
     font-size: 2.8rem;
   }
 
-/* --- Card本体 --- */
-.feature-card {
-  width: 100%;
-  max-width: 76%;
-  min-height: 180px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  padding: 16px;
-  margin: 0 auto;
-  background: #fff;
-  border: 5px solid #000;
-  border-radius: 24px;
-  box-shadow: 10px 10px 0 #000;
-  overflow: hidden;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
+  .feature-card {
+    min-height: 180px;
+    gap: 20px;
+    padding: 16px;
+  }
 
   .feature-image-wrapper {
     width: 240px;
