@@ -153,9 +153,8 @@
   font-weight: 900;
 }
 
-/* Mobile - レスポンシブ対応 */
-/* Mobile - レスポンシブ対応 */
-@media (max-width: 768px) {  /* ← 768spx → 768px */
+/* --- Mobile - レスポンシブ対応 --- */
+@media (max-width: 768px) {
   .features-section {
     padding: 80px 20px;
   }
@@ -164,24 +163,37 @@
     font-size: 2.8rem;
   }
 
+  /* --- Card本体 --- */
   .feature-card {
-    min-height: 180px;
+    width: 100%;
+    max-width: 100%; /* スマホの時は横幅いっぱいまで使う */
+    min-height: auto; /* 高さは中身に合わせて自動調整にする */
+    
+    display: flex;
+    flex-direction: column; /* ★超重要：ここを縦並び（上画像、下言葉）に変えることで文字が復活します！ */
+    
+    align-items: center;
     gap: 20px;
-    padding: 16px;
+    padding: 24px 16px; /* スマホ用に内側の余白を上下にしっかり持たせる */
+    margin: 0 auto;
   }
 
+  /* --- 【左側】画像エリア（スマホ用サイズ） --- */
   .feature-image-wrapper {
-    width: 240px;
-    height: 240px;
+    /* スマホ画面でもはみ出さないように、少しスリム（140px〜160px程度）に絞ります */
+    width: 150px; 
+    height: 220px;
+    margin-left: 0;
   }
 
+  /* --- 【右側】言葉（コンテンツ）エリア --- */
   .feature-card-content {
     width: 100%;
-    align-items: center;
-    text-align: center;
+    align-items: center;  /* 中身を中央寄せにする */
+    text-align: center;   /* テキストも中央寄せ */
   }
 
   .feature-card-header {
-    justify-content: center;
+    justify-content: center; /* アイコンとタイトルを中央に寄せる */
   }
 }
