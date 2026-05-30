@@ -7,15 +7,24 @@
   margin: 0 auto;
 }
 
-.features-title {
+.features-header {
   text-align: center;
+  margin-bottom: 60px;
+}
 
+.features-subtitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ff6200;
+  margin-bottom: 8px;
+}
+
+.features-title {
   font-size: 4rem;
   font-weight: 900;
-
-  margin-bottom: 60px;
-
   color: #fff;
+  margin: 0;
 }
 
 .features-title span {
@@ -23,42 +32,46 @@
 }
 
 /* Swiper */
-
+/* Swiper全体のコンテナ */
 .swiper {
-  padding: 20px 10px 60px;
+  width: 100%;
+  padding: 20px 10px 60px; /* ナビゲーションや影がはみ出さないための余白 */
+}
+
+/* 各スライド（カードを包む外枠）の配置設定 */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* React側の spaceBetween={24} と競合しないよう、
+     CSS側でも明示的に幅や余白の計算を整える場合があります */
+  box-sizing: border-box;
 }
 
 .swiper-slide {
   display: flex;
   justify-content: center;
+  height: auto; /* ← 追加 */
+  align-items: stretch; /* ← 追加 */
 }
 
-/* Card */
-
+/* --- Card本体 --- */
 .feature-card {
   width: 100%;
-
-  max-width: 500px;
-
-  min-height: 180px;
-
+  max-width: 76%;
+  min-height: 240px;
   display: flex;
-
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-
-  gap: 20px;
-
-  padding: 32px;
-
+  gap: 16px;
+  padding: 16px 16px 16px 0px;
+  margin: 0 auto;
   background: #fff;
-
-  border: 6px solid #000;
-
+  border: 5px solid #000;
   border-radius: 24px;
-
-  box-shadow: 12px 12px 0 #000;
-
+  box-shadow: 10px 10px 0 #000;
+  overflow: hidden; /* 画像の角をカードの丸みに合わせるため */
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -66,48 +79,82 @@
 
 .feature-card:hover {
   transform: translate(-4px, -4px);
-
-  box-shadow: 16px 16px 0 #000;
+  box-shadow: 14px 14px 0 #000;
 }
 
-.feature-card p {
-  font-size: 1.5rem;
+/* --- 【左側】画像エリアの調整 --- */
+.feature-image-wrapper {
+  width: 280px;      /* 画像を少し大きく調整 */
+  height: 280px;     /* カード内に綺麗に収まる高さ */
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: transparent;
+}
 
+.feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* スマホモックアップ全体の形が崩れないように収める */
+}
+
+/* --- 【右側】言葉（コンテンツ）エリア --- */
+.feature-card-content {
+  display: flex;
+  flex-direction: column; /* 上から下へ縦並び */
+  gap: 12px;             /* アイコンタイトルと説明の間の余白 */
+  flex-grow: 1;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* 右側の上：アイコンとタイトルの横並び */
+.feature-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.feature-card-header h3 {
+  font-size: 1.3rem;
   font-weight: 800;
-
   color: #000;
+  margin: 0;
 }
 
 .feature-card-icon {
-  width: 64px;
-  height: 64px;
-
+  width: 44px;
+  height: 44px;
   display: flex;
-
   align-items: center;
   justify-content: center;
-
-  border: 4px solid #000;
-
-  border-radius: 18px;
-
+  border: 3px solid #000;
+  border-radius: 12px;
   background: #fff;
-
   flex-shrink: 0;
+  color: #000;
+}
+
+/* 右側の下：一言コメント（言葉） */
+.feature-card-comment {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* Navigation Buttons */
-
 .swiper-button-prev,
 .swiper-button-next {
   color: #ff6200 !important;
-
   font-weight: 900;
 }
 
-/* Mobile */
-
-@media (max-width: 768px) {
+/* Mobile - レスポンシブ対応 */
+@media (max-width: 768spx) {
   .features-section {
     padding: 80px 20px;
   }
@@ -116,18 +163,39 @@
     font-size: 2.8rem;
   }
 
-  .feature-card {
-    min-height: 150px;
+/* --- Card本体 --- */
+.feature-card {
+  width: 100%;
+  max-width: 76%;
+  min-height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  margin: 0 auto;
+  background: #fff;
+  border: 5px solid #000;
+  border-radius: 24px;
+  box-shadow: 10px 10px 0 #000;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
 
-    padding: 24px;
+  .feature-image-wrapper {
+    width: 240px;
+    height: 240px;
   }
 
-  .feature-card p {
-    font-size: 1.2rem;
+  .feature-card-content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
   }
 
-  .feature-card-icon {
-    width: 52px;
-    height: 52px;
+  .feature-card-header {
+    justify-content: center;
   }
 }
