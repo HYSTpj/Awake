@@ -6,7 +6,7 @@ import {
   FileText,
   Bell,
   Star,
-} from 'lucide-react'
+} from 'lucide-react' // ★ 使っていない「Smile」を削除してビルドエラーを回避
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper/modules'
 
@@ -67,9 +67,7 @@ function Features(): React.JSX.Element {
           </h2>
         </div>
 
-        {/* ★ breakpoints を削除して slidesPerView={1} に固定。
-          これでフル画面でも常に1枚表示になります。
-        */}
+        {/* 常に1枚表示、レスポンシブ用の複数表示設定は排除 */}
         <Swiper
           modules={[Navigation, Autoplay]}
           navigation
