@@ -14,7 +14,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 
 /* 画像を追加 */
-import CreateEvents from '../../assets/src/assets/CreateEvents.jpeg'
+import CreateEvents from '../../assets/CreateEvents.jpeg'
 
 interface FeatureItem {
   icon: React.ReactNode
