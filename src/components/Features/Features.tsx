@@ -6,7 +6,7 @@ import {
   FileText,
   Bell,
   Star,
-} from 'lucide-react' // ★ 使っていない「Smile」を削除してビルドエラーを回避
+} from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper/modules'
 

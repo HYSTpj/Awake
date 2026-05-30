@@ -181,8 +181,8 @@
   /* --- 【左側】画像エリア（スマホ用サイズ） --- */
   .feature-image-wrapper {
     /* スマホ画面でもはみ出さないように、少しスリム（140px〜160px程度）に絞ります */
-    width: 150px; 
-    height: 220px;
+    width: 120px; 
+    height: 170px;
     margin-left: 0;
   }
 
