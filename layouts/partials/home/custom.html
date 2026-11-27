@@ -1,0 +1,179 @@
+{{ $p := .Params }}
+<div class="aw">
+  <section class="aw-hero">
+    {{ with resources.Get "img/logo.png" }}
+      <img class="aw-hero-logo nozoom" src="{{ .RelPermalink }}" alt="" width="128" height="128">
+    {{ end }}
+    <h1 class="aw-hero-title">{{ .Title }}</h1>
+    <p class="aw-hero-tagline">{{ $p.tagline | safeHTML }}</p>
+    <p class="aw-hero-lead">{{ $p.lead | safeHTML }}</p>
+  </section>
+
+  <section class="aw-section aw-problem">
+    <p class="aw-label">{{ $p.sections.problem.label }}</p>
+    <ul>
+      {{ range $p.problem }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    <p class="aw-problem-answer">{{ $p.sections.problem.answer }}</p>
+  </section>
+
+  <section class="aw-section">
+    <p class="aw-label">{{ $p.sections.steps.label }}</p>
+    <h2 class="aw-heading">{{ $p.sections.steps.title | safeHTML }}</h2>
+    <ol class="aw-steps">
+      {{ range $i, $s := $p.steps }}
+        <li class="aw-step">
+          <span class="aw-step-num">{{ add $i 1 }}</span>
+          <span class="aw-step-text">
+            <strong>{{ $s.title }}</strong>
+            <span>{{ $s.text }}</span>
+          </span>
+        </li>
+      {{ end }}
+    </ol>
+  </section>
+
+  <section class="aw-story" data-aw-story style="--aw-count: {{ len $p.features }}">
+    <div class="aw-story-stage">
+      <header class="aw-story-header">
+        <p class="aw-label">{{ $p.sections.features.label }}</p>
+        <h2 class="aw-heading">{{ $p.sections.features.title | safeHTML }}</h2>
+      </header>
+      <div class="aw-story-body">
+      <div class="aw-phone">
+        <div class="aw-phone-screen">
+          {{ range $i, $f := $p.features }}
+            {{ with resources.Get $f.image }}
+              <img class="nozoom{{ if eq $i 0 }} is-active{{ end }}" src="{{ .RelPermalink }}" alt="{{ $f.title }}の画面" width="{{ .Width }}" height="{{ .Height }}" loading="lazy">
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      <ol class="aw-story-list">
+        {{ range $i, $f := $p.features }}
+          <li class="{{ if eq $i 0 }}is-active{{ end }}">
+            <button type="button" aria-current="{{ if eq $i 0 }}true{{ else }}false{{ end }}">
+              <span class="aw-feature-icon">{{ partial "icon.html" $f.icon }}</span>
+              <span class="aw-story-item-text">
+                <strong>{{ $f.title }}</strong>
+                <span>{{ $f.text }}</span>
+              </span>
+            </button>
+          </li>
+        {{ end }}
+      </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="aw-section">
+    <h2 class="aw-heading">{{ $p.sections.tech.title | safeHTML }}</h2>
+    <p class="aw-section-text">{{ $p.sections.tech.text }}</p>
+    <div class="aw-tech">
+      {{ range $p.tech }}
+        <div class="aw-tech-group">
+          <h3 class="aw-tech-title">
+            <span class="aw-app-icon">{{ partial "icon.html" .icon }}</span>
+            {{ .category }}
+          </h3>
+          <ul class="aw-tech-items{{ if .small }} is-small{{ end }}">
+            {{ range .items }}
+              <li class="aw-app-card{{ if .primary }} is-primary{{ end }}">
+                {{ .name }}
+              </li>
+            {{ end }}
+          </ul>
+          {{ with .sub }}
+            <div class="aw-tech-sub">
+              <p class="aw-tech-sub-title">{{ .title }}</p>
+              <ul class="aw-tech-items">
+                {{ range .items }}
+                  <li class="aw-app-card{{ if .primary }} is-primary{{ end }}">
+                    {{ .name }}
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  {{ with $p.team }}
+    <section class="aw-section">
+      {{ with $p.sections.team }}
+        <p class="aw-label">{{ .label }}</p>
+        <h2 class="aw-heading">{{ .title | safeHTML }}</h2>
+        <p class="aw-section-text">{{ .text }}</p>
+        <h3 class="aw-members-title">{{ .members }}</h3>
+      {{ end }}
+      <ul class="aw-members">
+        {{ range $m := .members }}
+          <li>
+            {{ with resources.Get .image }}
+              <img class="nozoom" src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}" loading="lazy">
+            {{ end }}
+            <strong>{{ .name }}</strong>
+            <span class="aw-member-part">{{ .part }}</span>
+            <span class="aw-member-late" aria-label="遅刻度 {{ .late }}">
+              遅刻度 <span aria-hidden="true">{{ range $i := seq 5 }}<b{{ if le $i $m.late }} class="on"{{ end }}>★</b>{{ end }}</span>
+            </span>
+            <span class="aw-member-links">
+              {{ with .x }}<a class="aw-sns" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="X">{{ partial "icon.html" "x-twitter" }}</a>{{ end }}
+              {{ with .github }}<a class="aw-sns" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">{{ partial "icon.html" "github" }}</a>{{ end }}
+            </span>
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ end }}
+</div>
+
+<script>
+  document.querySelectorAll("[data-aw-story]").forEach((root) => {
+    const items = [...root.querySelectorAll(".aw-story-list li")];
+    const buttons = items.map((item) => item.querySelector("button"));
+    const images = [...root.querySelectorAll(".aw-phone-screen img")];
+    const count = items.length;
+    let active = 0;
+
+    const activate = (index) => {
+      if (index === active) return;
+      active = index;
+      items.forEach((el, i) => {
+        el.classList.toggle("is-active", i === index);
+        buttons[i].setAttribute("aria-current", i === index);
+      });
+      images.forEach((el, i) => el.classList.toggle("is-active", i === index));
+    };
+
+    const update = () => {
+      const rect = root.getBoundingClientRect();
+      const middle = window.innerHeight / 2;
+      document.documentElement.classList.toggle("aw-story-in-view", rect.top < middle && rect.bottom > middle);
+      const progress = Math.min(Math.max(-rect.top / (rect.height - window.innerHeight), 0), 0.999);
+      activate(Math.floor(progress * count));
+    };
+
+    buttons.forEach((button, index) => button.addEventListener("click", () => {
+      activate(index);
+      const top = root.getBoundingClientRect().top + window.scrollY;
+      const distance = root.offsetHeight - window.innerHeight;
+      window.scrollTo({ top: top + distance * ((index + 0.5) / count), behavior: "instant" });
+    }));
+
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          ticking = false;
+          update();
+        });
+      }
+    }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
+</script>
