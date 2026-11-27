@@ -1,5 +1,7 @@
 ---
 title: AWAKE
+images:
+  - ogp-v2.jpg
 tagline: 間に合う者には<em>称号</em>を、<br>遅刻する者には<em>汚名</em>を。
 lead: 遅刻をネタに変える新感覚イベントアプリ。<br>起床確認から遅刻レポートまで、すべてを記録。
 sections:
