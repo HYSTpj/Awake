@@ -202,7 +202,7 @@
   height: min(40svh, 36rem);
   aspect-ratio: 9 / 19.4;
   padding: 0.45rem;
-  border-radius: 2.2rem;
+  border-radius: 22.5% / 10.4%;
   background: #1c1c1e;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.08) inset,
@@ -212,7 +212,7 @@
 .aw-phone-screen {
   position: relative;
   height: 100%;
-  border-radius: 1.8rem;
+  border-radius: 20% / 9%;
   overflow: hidden;
   background: #fff;
 }
@@ -322,6 +322,13 @@
   height: 1rem;
 }
 
+@media (max-width: 1023px) {
+  .aw-story-body {
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+  }
+}
+
 @media (max-width: 767px) and (max-height: 720px) {
   .aw-story-body {
     gap: 1.5rem;
@@ -357,7 +364,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .aw-story-stage {
     padding: 2rem 0;
   }
