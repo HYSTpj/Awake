@@ -209,6 +209,14 @@
     0 1.5rem 3rem -1rem rgba(0, 0, 0, 0.35);
 }
 
+.dark .aw-phone {
+  background: #3a3a3c;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.32),
+    0 0 0 3px rgba(0, 0, 0, 0.18),
+    0 1.5rem 3rem -1rem rgba(0, 0, 0, 0.65);
+}
+
 .aw-phone-screen {
   position: relative;
   height: 100%;
