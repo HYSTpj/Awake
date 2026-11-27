@@ -40,27 +40,27 @@ features:
   - icon: list-check
     title: イベント作成
     text: 予定を作成してメンバーと共有。
-    image: img/screens/events.jpg
+    image: img/screens/create_event.png
   - icon: bell
     title: 起床・出発確認
     text: 通知で寝坊を防止。
-    image: img/screens/member-status.png
+    image: img/screens/event_detail.png
   - icon: eye
     title: 寝坊・遅刻状況
     text: 現在の状況をリアルタイム表示。
-    image: img/screens/member-status.png
+    image: img/screens/member's_status.png
   - icon: check
     title: チェックイン
     text: QRコードやパスコードで到着を報告。
-    image: img/screens/member-status.png
+    image: img/screens/qrcode.png
   - icon: file-lines
     title: 遅刻レポート
     text: 写真や遅刻理由を投稿。
-    image: img/screens/member-status.png
+    image: img/screens/late_post.png
   - icon: star
     title: 遅刻王ランキング
     text: 遅刻や寝坊した人をランキング化。
-    image: img/screens/member-status.png
+    image: img/screens/ranking.png
 tech:
   - category: Design
     icon: awake-pen
